@@ -332,7 +332,7 @@ export function Contact() {
                     <ContactCard className="justify-center items-center flex-col gap-6 lg:w-[394px]">
                     <Icon icon='material-symbols:mail' width={24} height={24} className="text-white"/>
                     <p>Email</p>
-                     <p>{data.email}</p>
+                     <p className="text-center">{data.email}</p>
                      </ContactCard>
                 </a>
 
