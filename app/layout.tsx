@@ -22,16 +22,16 @@ const inknutAntiqua = Inknut_Antiqua({
 
 export const metadata: Metadata = {
   metadataBase: new URL(data.url),
-  title: "Élagueur à Pierrelaye (95) — Élagage, Abattage, Taille de Haie | Pierre Elagage",
+  title: "Élagueur Chantilly - Élagage, abattage, taille de haie | Ginestiere",
   description:
-    "Pierre Rudy, élagueur certifié à Pierrelaye dans le Val-d'Oise. Spécialiste en élagage, abattage d'arbres extrême et taille de haie. Devis gratuit sous 24h. Intervention rapide en Île-de-France.",
+    "Pierre Rudy, élagueur certifié à Chantilly dans l'Oise. Spécialiste en élagage, abattage d'arbres extrême et taille de haie. Devis gratuit sous 24h. Intervention rapide en Île-de-France.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Élagueur à Pierrelaye (95) — Pierre Elagage",
+    title: "Élagueur Chantilly - Élagage, abattage, taille de haie | Ginestiere",
     description:
-      "Élagueur certifié avec 20 ans d'expérience. Élagage, abattage, taille de haie à Pierrelaye et dans le Val-d'Oise. Devis gratuit.",
+      "Élagueur certifié avec 20 ans d'expérience. Élagage, abattage, taille de haie dans l'Oise. Devis gratuit.",
     url: data.url,
     siteName: "Elagage Pierre",
     locale: "fr_FR",
@@ -41,15 +41,15 @@ export const metadata: Metadata = {
         url: "/fongui.jpeg",
         width: 1200,
         height: 630,
-        alt: "Élagueur Pierre Rudy en action à Pierrelaye dans le Val-d'Oise",
+        alt: "Élagueur Pierre Rudy en action à Chantilly dans l'Oise",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Élagueur à Pierrelaye (95) — Pierre Elagage",
+    title: "Élagueur à Chantilly — Pierre Elagage",
     description:
-      "Élagueur certifié avec 20 ans d'expérience. Élagage, abattage, taille de haie à Pierrelaye et dans le Val-d'Oise. Devis gratuit.",
+      "Élagueur certifié avec 20 ans d'expérience. Élagage, abattage, taille de haie à Chantilly et dans l'Oise. Devis gratuit.",
     images: ["/fongui.jpeg"],
   },
   other: {
@@ -65,16 +65,16 @@ const jsonLd = {
       "@id": `${data.url}/#business`,
       name: data.entreprise,
       description:
-        "Élagueur certifié avec 20 ans d'expérience en élagage, abattage d'arbres et taille de haie à Pierrelaye dans le Val-d'Oise.",
+        "Élagueur certifié avec 20 ans d'expérience en élagage, abattage d'arbres et taille de haie à Chantilly dans l'Oise.",
       url: data.url,
       telephone: data.numero,
       email: data.email,
       address: {
         "@type": "PostalAddress",
         streetAddress: "10 route d'Eragny",
-        addressLocality: "Pierrelaye",
+        addressLocality: "Chantilly",
         postalCode: "95480",
-        addressRegion: "Val-d'Oise",
+        addressRegion: "Oise",
         addressCountry: "FR",
       },
       geo: {
@@ -100,12 +100,12 @@ const jsonLd = {
       ],
       priceRange: "€€",
       image: `${data.url}/fongui.jpeg`,
-      areaServed: [
-        { "@type": "City", name: "Pierrelaye" },
-        { "@type": "AdministrativeArea", name: "Val-d'Oise" },
-        { "@type": "AdministrativeArea", name: "Île-de-France" },
+        areaServed: [
+        { "@type": "City", name: "Chantilly" },
         { "@type": "AdministrativeArea", name: "Oise" },
-        { "@type": "AdministrativeArea", name: "Yvelines" },
+        { "@type": "AdministrativeArea", name: "Île-de-France" },
+        { "@type": "AdministrativeArea", name: "Val-d'Oise" }
+        
       ],
       aggregateRating: {
         "@type": "AggregateRating",
@@ -124,7 +124,7 @@ const jsonLd = {
               "@type": "Service",
               name: "Élagage d'arbres",
               description:
-                "Élagage professionnel de tous types d'arbres à Pierrelaye et dans le Val-d'Oise.",
+                "Élagage professionnel de tous types d'arbres à Chantilly et dans l'Oise.",
             },
           },
           {
@@ -141,8 +141,8 @@ const jsonLd = {
             itemOffered: {
               "@type": "Service",
               name: "Taille de haie",
-              description:
-                "Taille et entretien de haies pour particuliers et professionnels dans le Val-d'Oise.",
+                description:
+                "Taille et entretien de haies pour particuliers et professionnels dans l'Oise.",
             },
           },
           {
@@ -150,8 +150,8 @@ const jsonLd = {
             itemOffered: {
               "@type": "Service",
               name: "Pose de clôture",
-              description:
-                "Pose et installation de clôtures à Pierrelaye et dans le Val-d'Oise.",
+                description:
+                "Pose et installation de clôtures à Chantilly et dans l'Oise.",
             },
           },
           {
@@ -174,7 +174,7 @@ const jsonLd = {
           name: "Quel est le tarif d'un élagueur à Pierrelaye ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Pierre Elagage propose des devis gratuits et sans engagement pour tous les travaux d'élagage à Pierrelaye et dans le Val-d'Oise. Contactez-nous au 06 06 77 65 87 pour obtenir votre devis sous 24h.",
+            text: "Pierre Elagage propose des devis gratuits et sans engagement pour tous les travaux d'élagage à Chantilly et dans l'Oise. Contactez-nous au 06 06 77 65 87 pour obtenir votre devis sous 24h.",
           },
         },
         {
@@ -182,7 +182,7 @@ const jsonLd = {
           name: "Intervenez-vous en urgence pour l'abattage d'arbres dangereux ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Oui, Pierre Rudy intervient en urgence pour l'abattage d'arbres dangereux dans tout le Val-d'Oise. Spécialisé dans les abattages extrêmes, il peut intervenir rapidement pour sécuriser votre propriété.",
+            text: "Oui, Pierre Rudy intervient en urgence pour l'abattage d'arbres dangereux dans tout l'Oise. Spécialisé dans les abattages extrêmes, il peut intervenir rapidement pour sécuriser votre propriété.",
           },
         },
         {
@@ -190,7 +190,7 @@ const jsonLd = {
           name: "Quelles zones géographiques couvrez-vous ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Pierre Elagage intervient à Pierrelaye et dans tout le Val-d'Oise (95), ainsi que dans les départements voisins en Île-de-France, dans l'Oise et dans les Yvelines.",
+            text: "Pierre Elagage intervient à Chantilly et dans tout l'Oise (95), ainsi que dans les départements voisins en Île-de-France, dans l'Oise et dans les Yvelines.",
           },
         },
         {
@@ -198,7 +198,7 @@ const jsonLd = {
           name: "Pierre Elagage propose-t-il des devis gratuits ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Oui, Pierre Rudy propose des devis gratuits et sans engagement sous 24h pour tous vos travaux d'élagage, d'abattage et de taille de haie à Pierrelaye et dans le Val-d'Oise.",
+            text: "Oui, Pierre Rudy propose des devis gratuits et sans engagement sous 24h pour tous vos travaux d'élagage, d'abattage et de taille de haie à Chantilly et dans l'Oise.",
           },
         },
         {
@@ -224,7 +224,7 @@ export default function RootLayout({
       lang="fr"
       className={`${geistSans.variable} ${geistMono.variable} ${inknutAntiqua.variable} h-full antialiased`}
     >
-      <head> <meta name="google-site-verification" content="NvbGpkvEyilbI1jZscCpYfKqX_77F5fn7TYhotS31yU" /></head>
+      <head><meta name="google-site-verification" content="NvbGpkvEyilbI1jZscCpYfKqX_77F5fn7TYhotS31yU" /></head>
       <body className="min-h-full flex flex-col">
         <script
           type="application/ld+json"

@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 
 import { data } from "./data";
 import { ContactForm } from "./Formdevis";
+import AnimatedSection from "./AnimatedSection";
 
 
 type boutonprops = {
@@ -96,13 +97,13 @@ export function Hero2() {
         <header id="accueil" className="relative h-auto grid grid-cols-12 w-full px-[32px]">
 
       <Image
-        src="/fongui.jpeg"
-        alt="élagueur Pierre Rudy sur une taille de haie à Pierrelaye"
+        src="/fongui.jpg"
+        alt="arbre a abattre et entretenir"
         fill
         priority
-        quality={75}
+        quality={100}
         sizes="100vw"
-        className="object-cover object-bottom "
+        className="object-cover"
       />
 
       <div className="absolute inset-0 bg-black/60" />
@@ -209,7 +210,7 @@ export function About() {
 
     return (
         <>
-        <section id="service" className="flex flex-col py-16 px-6 lg:px-24 gap-16 bg-gradient-to-r from-[#f5f5f5] via-white to-accent">
+            <AnimatedSection id="service" className="flex flex-col py-16 px-6 lg:px-24 gap-16 bg-gradient-to-b from-[#f5f5f5] via-white to-accent">
 
             <div className="flex flex-col gap-6 text-center max-w-4xl mx-auto">
                 <h2 className="text-accent font-bold text-[32px] lg:text-[48px]">{data.titreh2}</h2>
@@ -232,7 +233,7 @@ export function About() {
                 <Image src={data.photo2} alt={data.altphoto2} width={320} height={337} quality={75} className="object-cover object-bottom rounded-lg shrink-0" />
             </div>
 
-        </section>
+            </AnimatedSection>
         </>
     )
 }
@@ -296,13 +297,13 @@ export function Contact() {
         <Section  className="relative grid grid-cols-12  w-full h-auto  p-[32px] z-30 bg-accent text-white  ">
         
       <Image
-        src="/fongui.jpeg"
-        alt="élagueur Pierre Rudy sur une taille de haie à Pierrelaye"
+        src="/fongui.jpg"
+        alt="arbre en mauvais état a abattre"
         fill
         priority
         quality={75}
         sizes="100vw"
-        className="object-cover object-bottom"
+        className="object-cover"
       />
     <div className="absolute inset-0 bg-black/60" />
 
@@ -315,7 +316,7 @@ export function Contact() {
     viewport={{ once: true }}
     className="row-start-1 lg:row-start-6 col-span-full w-full justify-center items-center flex flex-col gap-[48px]  z-80">
                 <div className="flex flex-col gap-[16px] text-center">
-                    <h2 className="font-extrabold text-[32px]">Demandez votre devis gratuit — Élagueur à Pierrelaye (95)</h2>
+                    <h2 className="font-extrabold text-[32px]">Demandez votre devis gratuit — Élagueur à Chantilly </h2>
                     <p className="font-semibold text-[24px]">Contactez-nous dès aujourd'hui pour un devis gratuit et sans engagement. Notre équipe est à votre disposition pour étudier votre projet et vous proposer les meilleures solutions adaptées à vos besoins.</p>
             </div>
             <div className="flex flex-col gap-[24px] lg:flex-row ">

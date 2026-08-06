@@ -5,7 +5,7 @@ import { data } from "../data";
 export const metadata: Metadata = {
   title: "Conditions Générales de Services — Pierre Elagage",
   description:
-    "Conditions générales de services de Pierre Elagage, élagueur certifié à Pierrelaye dans le Val-d'Oise.",
+    "Conditions générales de services de Pierre Elagage, élagueur certifié à Chantilly dans l'Oise.",
   alternates: {
     canonical: "/conditions-generales-services",
   },

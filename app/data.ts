@@ -1,40 +1,40 @@
 export const data = {
-    entreprise:"Elagage Pierre",
+    entreprise:"Ginestiere élagage",
     fonction:["élagage"],
-    url:"https://elagagepierre.fr",
-    name:'Pierre Rudy',
-    email:'contact@elagagepierre.fr',
-    numero:'06 06 77 65 87',
-    adresse:"10 route d'eragny 95480 Pierrelaye",
-    zone:['ile de france',"Val d'oise", "oise", "pierrelaye","yvelines"],
-    horaire:'de 7h a 19h',
-    titreh1: "Élagueur à Pierrelaye (95) — Élagage et Abattage d'Arbres dans le Val-d'Oise",
-    soustitrehero:"Vos arbres entre les mains d'un élagueur certifié — devis gratuit sous 24h à Pierrelaye et dans tout le Val-d'Oise",
-    titreh2: "Élagueur certifié à Pierrelaye — Abattage, Élagage et Entretien d'Arbres dans le Val-d'Oise",
-    description: "Notre entreprise met son expertise en élagage et aménagement paysager au service des particuliers et des professionnels dans toute la région du Val-d'Oise. Passionnés par la nature et le travail bien fait, nous accompagnons chaque projet avec rigueur et soin, qu'il s'agisse de l'entretien de jardins, de la taille d'arbres ou de la création d'espaces verts sur mesure.Notre philosophie repose sur trois valeurs fondamentales : sécurité, qualité et respect de l'environnement. Chaque arbre, arbuste ou haie est traité avec attention pour préserver sa santé et la beauté de votre jardin. Nous utilisons des techniques professionnelles et du matériel adapté pour garantir des interventions efficaces et sécurisées, même sur des arbres difficiles d'accès ou dangereux.Que vous ayez besoin d'un élagage, d'un abattage sécurisé, de la taille de haies ou d'arbustes, ou de l'entretien complet de vos espaces verts, notre équipe est là pour concrétiser vos projets. Notre objectif : vous offrir un jardin sain, esthétique et parfaitement entretenu, tout en simplifiant votre vie grâce à nos services complets et à l'évacuation des végétaux.",
+    url:"https://ginestiere-elagage.fr",
+    name:'Ginestiere Jerry',
+    email:'contact@ginestiere-elagage.fr',
+    numero:'07 67 87 80 54',
+    adresse:"17 allée des eguerets Jouy-le-Moutier ",
+    zone:["oise", "oise", "Chantilly"],
+    horaire:'de 8h a 20h',
+    titreh1: "Élagage et entretien de jardin à Chantilly",
+    soustitrehero:"Élagage, abattage et entretien de jardin à Chantilly, Gouvieux et Chambly. Intervention rapide, matériel professionnel, devis gratuit sous 48 h.",
+    titreh2: "entretien de jardin et abattage d'arbres a Chantilly",
+    description: "Notre entreprise met son expertise en élagage et aménagement paysager au service des particuliers et des professionnels dans toute la région de l'Oise. Passionnés par la nature et le travail bien fait, nous accompagnons chaque projet avec rigueur et soin, qu'il s'agisse de l'entretien de jardins, de la taille d'arbres ou de la création d'espaces verts sur mesure.Notre philosophie repose sur trois valeurs fondamentales : sécurité, qualité et respect de l'environnement. Chaque arbre, arbuste ou haie est traité avec attention pour préserver sa santé et la beauté de votre jardin. Nous utilisons des techniques professionnelles et du matériel adapté pour garantir des interventions efficaces et sécurisées, même sur des arbres difficiles d'accès ou dangereux.Que vous ayez besoin d'un élagage, d'un abattage sécurisé, de la taille de haies ou d'arbustes, ou de l'entretien complet de vos espaces verts, notre équipe est là pour concrétiser vos projets. Notre objectif : vous offrir un jardin sain, esthétique et parfaitement entretenu, tout en simplifiant votre vie grâce à nos services complets et à l'évacuation des végétaux.",
     avis:[{
-        nom:"Clarisse Ella",
-        commentaire:"Je suis extrêmement satisfait du travail d'élagage réalisé ! Tout s'est très très très bien passé du début à la fin. L'équipe a été ponctuelle, professionnelle, soigneuse et à l'écoute."
+        nom:"Claudia Lo",
+        commentaire:"je le recommande les yeux fermés.Prix tout à fait correct. De bons conseils et surtout un travail impeccable avec évacuation des déchets à la fin de l'intervention. Au top."
     },
     {
-        nom:"Mayer Dylan",
-        commentaire:"“Entreprise d'élagage très professionnelle. Intervention rapide à mon domicile. Travail propre et soigné, équipe sérieuse et efficace. Je recommande.”"
+        nom:"Isabelle-Delia",
+        commentaire:"Travail rapide, efficace et très bien réalisé ; ponctualité, respect des délais, politesse et sourire. Cet établissement a toute ma confiance et ma sympathie. Merci pour l'entretien régulier du jardin."
     },
     {
-        nom:"Aden David",
-        commentaire:"Je recommande vivement Monsieur Pierre pour ses services d'élagage. C'est un élagueur très professionnel, ponctuel et soigneux dans son travail."
+        nom:"Maya Matthey",
+        commentaire:"“Cela fait plusieurs fois que Jerry intervient dans mon jardin Il est sérieux, ponctuel et travaille très bien.Je le recommande les yeux fermés”"
     },
 ],
-    deschero:"Pierre Rudy est votre élagueur de confiance à Pierrelaye et à ses alentours. Spécialiste en abattages extrêmes, nous assurons un service fiable pour vos arbres. Obtenez un devis gratuit dès aujourd’hui et profitez d’une intervention rapide et professionnelle.",
-    soustitreh2:"Fort de 20 ans d'expérience dans l'élagage, Nous intervenons à Pierrelaye et dans tout le Val-d'Oise pour prendre en charge l'ensemble de vos travaux arboricoles. Spécialisé dans les abattages extrêmes et les interventions en milieu difficile, il met son expertise au service des particuliers comme des professionnels. Soucieux du travail bien fait, Pierre Rudy vous garantit une intervention soignée, sécurisée et dans les règles de l'art. Contactez-le dès aujourd'hui pour un devis gratuit et sans engagement.",
-    textservice:"Nous proposons une gamme complète de services pour l'entretien et l'aménagement de vos espaces verts à Pierrelaye et dans le Val-d'Oise. Élagage, abattage d'arbres classique ou extrême en milieu difficile, taille de haie, pose de clôture et remise en état de jardin — chaque prestation est réalisée avec soin et professionnalisme. Que vous soyez particulier ou professionnel, Pierre Rudy s'adapte à vos besoins et intervient rapidement pour un résultat impeccable.",
-    pourquoichoisir:"Choisir Pierre Elagage, c'est faire confiance à un élagueur certifié avec 20 ans d'expérience dans le Val-d'Oise. Basé à Pierrelaye, il intervient rapidement chez vous pour tous vos travaux arboricoles, des plus simples aux plus complexes. Spécialisé dans les abattages extrêmes et les interventions en hauteur, Nous maîtrisons les techniques les plus exigeantes pour garantir votre sécurité et celle de vos biens. Chaque chantier est réalisé dans le respect des normes en vigueur, avec un matériel professionnel et entretenu. Devis gratuit, tarifs transparents et intervention rapide — la tranquillité d'esprit est comprise dans la prestation.",
-    avish2:"Ils nous ont fait confiance à Pierrelaye et dans le 95",
-    photo1:"/photo1.jpeg",
+    deschero:"Jerry Ginestière est votre elagueur paysagiste de confiance à Chantilly et dans l'Oise. Spécialiste en abattage, déracinage et taille de haie nous assurons un service fiable et durable pour protéger votre habitat. Obtenez un devis gratuit dès aujourd'hui et bénéficiez d'une intervention rapide avec garantie décennale.",
+    soustitreh2:"Ginestière Elagage est une entreprise d'élagage et de paysagisme installée à Chambly, dans l'Oise. Nous intervenons sur Chantilly, Gouvieux, Viarmes, Luzarches et l'ensemble du secteur pour l'élagage, l'abattage, le démontage d'arbres, la taille de haie et l'entretien de jardin.Particuliers, copropriétés et professionnels : chaque chantier est traité avec le même soin, du diagnostic à l'évacuation des déchets verts. Matériel professionnel, travail sécurisé, entreprise assurée. Devis gratuit et sans engagement sous 48 heures.",
+    textservice:"Nous intervenons sur tous types d'arbres, du jeune sujet au spécimen centenaire.Élagage et taille douce. Nous pratiquons la taille raisonnée, respectueuse de la physiologie de l'arbre : suppression du bois mort, réduction de couronne, éclaircissage, dégagement de toiture ou de ligne électrique. Une taille mal exécutée fragilise l'arbre durablement — nous travaillons dans les règles de l'art.Abattage,déracinage et démontage. Lorsqu'un arbre est dépérissant, dangereux ou trop proche d'une habitation, nous procédons à l'abattage direct ou au démontage par rétention en espace contraint. Rognage de souche possible en complément.Taille de haie. Taille de formation ou d'entretien, sur haies libres comme sur haies architecturées, quelle que soit la hauteur.Entretien de jardin. Tonte, débroussaillage, désherbage, ramassage de feuilles, remise en état de terrain. Contrats annuels disponibles pour un jardin impeccable toute l'année.Chaque chantier est laissé propre : évacuation intégrale des déchets verts comprise.",
+    pourquoichoisir:"Un travail sécurisé. Grimpe encordée, nacelle, matériel entretenu et contrôlé. Nous sommes couverts par une assurance responsabilité civile professionnelle et une garantie décennale.Le respect du vivant. Nous adaptons nos interventions aux périodes favorables et respectons la nidification. Un arbre bien taillé au bon moment, c'est un arbre qui repart mieux l'année suivanteUn devis clair et gratuit. Déplacement sans engagement, chiffrage détaillé, aucun frais caché. Vous savez exactement ce que vous payez avant le début du chantier.Une entreprise locale. Basés à Chambly, nous connaissons le secteur et ses contraintes. Vous avez un interlocuteur unique, joignable directement.",
+    avish2:"Ils nous ont fait confiance dans l'Oise",
+    photo1:"/service.jpg",
     altphoto1:"élagueur pierre en train d'abattre un arbre",
-    photo2:"/fondcontact.jpeg",
-    altphoto2:"fin d'un chantier d'élagage à Pierrelaye",
-    photofondcontact:"/fondcontact.jpeg",
+    photo2:"/pknous.jpg",
+    altphoto2:"fin d'un chantier d'élagage à Chantilly",
+    photofondcontact:"/pknous.jpg",
 
 
 

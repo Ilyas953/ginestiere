@@ -5,7 +5,7 @@ import { data } from "../data";
 export const metadata: Metadata = {
   title: "Mentions Légales — Pierre Elagage",
   description:
-    "Mentions légales du site Pierre Elagage, élagueur certifié à Pierrelaye dans le Val-d'Oise.",
+    "Mentions légales du site Pierre Elagage, élagueur certifié à Chantilly dans l'Oise.",
   alternates: {
     canonical: "/mentions-legales",
   },
