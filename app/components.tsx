@@ -140,6 +140,97 @@ export function Hero2() {
     )  
 }
 
+type villeHeroProps = {
+    titre: string,
+    description: string,
+    image: string,
+    imageAlt: string,
+}
+
+export function VilleHero({titre, description, image, imageAlt}: villeHeroProps) {
+
+    return (
+        <>
+        <header id="accueil" className="relative h-auto grid grid-cols-12 w-full px-[32px]">
+
+      <Image
+        src={image}
+        alt={imageAlt}
+        fill
+        priority
+        quality={80}
+        sizes="100vw"
+        className="object-cover"
+      />
+
+      <div className="absolute inset-0 bg-black/60" />
+            <Header />
+            <motion.div
+    initial={{ opacity: 1, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+
+    className=" min-h-[70vh] lg:text-start col-span-full lg:col-span-7 items-center lg:items-start flex flex-col gap-[48px] py-[124px] lg:py-[96px] lg:px-[32px] z-20 lg:col-start-1">
+                <div className="flex flex-col gap-[16px] lg:max-w-7xl">
+            <h1 className=" text-white  text-[32px] lg:text-[48px] font-extrabold text-center lg:text-start justify-center">{titre}</h1>
+            <p className="text-[24px] text-[#E6E6E6] font-semibold text-center lg:text-start">{description}</p>
+            </div>
+            <div className="flex flex-col lg:flex-row justify-center lg:justify-start items-center lg:items-start gap-[24px]">
+                <Link href={`tel:${data.numero}`} className="h-full"><Bouton className="h-full">
+                        <Icon icon='material-symbols:call' width={24} height={24} className="text-white"/>
+                <p className=" text-[16px] font-semibold text-white ">Appeler Maintenant</p>
+                </Bouton>
+                </Link>
+                <Link href="/#contact" className="h-full">
+                <SecondBouton className="h-full"><Icon icon='material-symbols:mail' width={24} height={24} className="text-white"/>
+                <p className=" text-[16px] font-semibold text-white ">Obtenir un devis gratuit</p></SecondBouton>
+                </Link>
+            </div>
+            </motion.div>
+
+        </header>
+
+        </>
+    )
+}
+
+export function VilleContent({ville, intro, services, pourquoi, image, imageAlt}: {
+    ville: string,
+    intro: string,
+    services: string,
+    pourquoi: string,
+    image: string,
+    imageAlt: string,
+}) {
+
+    return (
+        <>
+            <AnimatedSection id="service" className="flex flex-col py-16 px-6 lg:px-24 gap-16 bg-gradient-to-b from-[#f5f5f5] via-white to-accent">
+
+            <div className="flex flex-col gap-6 text-center max-w-4xl mx-auto">
+                <h2 className="text-accent font-bold text-[32px] lg:text-[48px]">Élagueur à {ville}</h2>
+                <p className="text-[16px] text-text">{intro}</p>
+            </div>
+
+            <div className="flex flex-col lg:flex-row gap-8 items-center max-w-5xl mx-auto w-full">
+                <Image src={image} alt={imageAlt} width={320} height={337} quality={75} className="object-cover object-bottom rounded-lg shrink-0" />
+                <div className="flex flex-col gap-4">
+                    <h3 className="text-accent font-bold text-[24px]">Nos services à {ville}</h3>
+                    <p className="text-[16px] text-text">{services}</p>
+                </div>
+            </div>
+
+            <div className="flex flex-col gap-4 max-w-5xl mx-auto w-full">
+                <h3 className="text-accent font-bold text-[24px]">Pourquoi nous choisir</h3>
+                <p className="text-[16px] text-text">{pourquoi}</p>
+            </div>
+
+            </AnimatedSection>
+        </>
+    )
+}
+
+
 export function Header() {
 
     const [burger, setBurger] = useState<boolean>(false)
@@ -157,9 +248,11 @@ export function Header() {
      <div className={`col-span-full w-full fixed px-[32px] py-[24px] top-0 left-0 z-50 flex flex-row items-center justify-between text-white transition-all duration-300 ${scrolled ? "backdrop-blur-md" : ""}`}>
         <p className={`text-2xl text-[#2CC817] font-extrabold  font-[family-name:var(--font-inknut-antiqua)]`}>{data.entreprise}</p>
             <div className="hidden lg:flex flex-row gap-8 text-[16px] ">
-                <Link href="#accueil"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out">Accueil <span className=" transition-all duration-300 ease-in-out border-accent border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
-                <Link href="#service"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out">À propos <span className=" transition-all duration-300 ease-in-out border-accent border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
-                <Link href="#contact"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out">Contact <span className=" transition-all duration-300 ease-in-out border-accent border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
+                <Link href="/#accueil"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out">Accueil <span className=" transition-all duration-300 ease-in-out border-accent border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
+                <Link href="/#service"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out">À propos <span className=" transition-all duration-300 ease-in-out border-accent border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
+                <Link href="/elagueur-gouvieux"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out">Gouvieux <span className=" transition-all duration-300 ease-in-out border-accent border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
+                <Link href="/elagueur-domont"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out">Domont <span className=" transition-all duration-300 ease-in-out border-accent border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
+                <Link href="/#contact"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out">Contact <span className=" transition-all duration-300 ease-in-out border-accent border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
             </div>
 
 
@@ -170,7 +263,7 @@ export function Header() {
                 <p className="font-extrabold text-[16px]">{data.numero}</p>
                 </SecondBouton>
                 </a>
-                <Link href="#contact">
+                <Link href="/#contact">
                 <Bouton className="items-center opacity-0 lg:opacity-100 h-full">
                     <Icon icon='material-symbols:mail' width={24} height={24} className="text-white"/>
                 <p className=" text-[16px] font-semibold">Devis gratuit</p>
@@ -190,10 +283,12 @@ export function Header() {
      {burger && <div className=" fixed top-0 left-0  inset h-screen z-30 w-screen flex flex-col justify-center items-center px-8 py-8 bg-black/85 text-white">
                 <div className=" self-end justify-self-start flex flex-row items-end "><button onClick={() => setBurger(false)}><Icon icon="akar-icons:cross" className="relative   w-[44px] h-11 text-second " /></button></div>
                  <div className=" row-start-1 mt-20 ml-10 col-span-full text-center items-center flex flex-col gap-8 text-[24px] font-semibold ">
-                <Link href="#accueil"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out" onClick={()=> setBurger(false)}>Accueil <span className=" transition-all duration-300 ease-in-out border-violet-500 border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
-                <Link href="#service"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out" onClick={()=> setBurger(false)}>À propos <span className=" transition-all duration-300 ease-in-out border-violet-500 border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
-                <Link href="#contact"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out" onClick={()=> setBurger(false)}>Contact <span className=" transition-all duration-300 ease-in-out border-violet-500 border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
-                
+                <Link href="/#accueil"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out" onClick={()=> setBurger(false)}>Accueil <span className=" transition-all duration-300 ease-in-out border-violet-500 border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
+                <Link href="/#service"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out" onClick={()=> setBurger(false)}>À propos <span className=" transition-all duration-300 ease-in-out border-violet-500 border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
+                <Link href="/elagueur-gouvieux"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out" onClick={()=> setBurger(false)}>Élagueur Gouvieux <span className=" transition-all duration-300 ease-in-out border-violet-500 border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
+                <Link href="/elagueur-domont"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out" onClick={()=> setBurger(false)}>Élagueur Domont <span className=" transition-all duration-300 ease-in-out border-violet-500 border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
+                <Link href="/#contact"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out" onClick={()=> setBurger(false)}>Contact <span className=" transition-all duration-300 ease-in-out border-violet-500 border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
+
             </div>
 
                 </div>
@@ -373,8 +468,14 @@ export function Footer() {
               <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-16 lg:h-full ">
                  <div className="text-white font-semibold text-2xl flex flex-col gap-6 text-center">
                      <p className="text-white text-[32px]">Navigation</p>
-                      <a href="#accueil">Accueil</a>
-                       <a href="#service">À propos</a><a href="#contact">Contact</a>
+                      <a href="/#accueil">Accueil</a>
+                       <a href="/#service">À propos</a><a href="/#contact">Contact</a>
+                        </div>
+                         <div className="bg-second/50 w-full h-px lg:h-65 lg:w-0.5  "></div>
+                        <div className="text-white font-semibold text-2xl flex flex-col gap-6 text-center">
+                            <p className="text-white text-[32px]">Zones d&apos;intervention</p>
+                            <Link href="/elagueur-gouvieux">Élagueur à Gouvieux</Link>
+                            <Link href="/elagueur-domont">Élagueur à Domont</Link>
                         </div>
                          <div className="bg-second/50 w-full h-px lg:h-65 lg:w-0.5  "></div>
                         <div className="text-white font-semibold text-2xl flex flex-col gap-6 text-center">

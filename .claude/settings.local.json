@@ -4,7 +4,9 @@
       "Bash(npm install *)",
       "Bash(file /c/Users/ilyas/elagagepierre/public/*.jpeg /c/Users/ilyas/elagagepierre/public/*.svg)",
       "Bash(node -e \"require\\('sharp'\\); console.log\\('sharp ok'\\)\")",
-      "Bash(node -e ' *)"
+      "Bash(node -e ' *)",
+      "Bash(npx tsc *)",
+      "Bash(npx next *)"
     ]
   }
 }

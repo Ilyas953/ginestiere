@@ -22,35 +22,35 @@ const inknutAntiqua = Inknut_Antiqua({
 
 export const metadata: Metadata = {
   metadataBase: new URL(data.url),
-  title: "Élagueur Chantilly - Élagage, abattage, taille de haie | Ginestiere",
+  title: `Élagueur Chantilly - Élagage, abattage, taille de haie | ${data.entreprise}`,
   description:
-    "Pierre Rudy, élagueur certifié à Chantilly dans l'Oise. Spécialiste en élagage, abattage d'arbres extrême et taille de haie. Devis gratuit sous 24h. Intervention rapide en Île-de-France.",
+    `${data.name}, élagueur à Chantilly dans l'Oise. Spécialiste en élagage, abattage d'arbres et taille de haie. Devis gratuit sous 48h. Intervention rapide dans l'Oise et le Val-d'Oise.`,
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Élagueur Chantilly - Élagage, abattage, taille de haie | Ginestiere",
+    title: `Élagueur Chantilly - Élagage, abattage, taille de haie | ${data.entreprise}`,
     description:
-      "Élagueur certifié avec 20 ans d'expérience. Élagage, abattage, taille de haie dans l'Oise. Devis gratuit.",
+      "Élagage, abattage, taille de haie et entretien de jardin dans l'Oise. Devis gratuit sous 48h.",
     url: data.url,
-    siteName: "Elagage Pierre",
+    siteName: data.entreprise,
     locale: "fr_FR",
     type: "website",
     images: [
       {
-        url: "/fongui.jpeg",
+        url: "/fongui.jpg",
         width: 1200,
         height: 630,
-        alt: "Élagueur Pierre Rudy en action à Chantilly dans l'Oise",
+        alt: `Élagueur ${data.entreprise} en action à Chantilly dans l'Oise`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Élagueur à Chantilly — Pierre Elagage",
+    title: `Élagueur à Chantilly — ${data.entreprise}`,
     description:
-      "Élagueur certifié avec 20 ans d'expérience. Élagage, abattage, taille de haie à Chantilly et dans l'Oise. Devis gratuit.",
-    images: ["/fongui.jpeg"],
+      "Élagage, abattage, taille de haie et entretien de jardin à Chantilly et dans l'Oise. Devis gratuit.",
+    images: ["/fongui.jpg"],
   },
   other: {
     "theme-color": "#2CC817",
@@ -65,22 +65,22 @@ const jsonLd = {
       "@id": `${data.url}/#business`,
       name: data.entreprise,
       description:
-        "Élagueur certifié avec 20 ans d'expérience en élagage, abattage d'arbres et taille de haie à Chantilly dans l'Oise.",
+        "Élagage, abattage d'arbres et taille de haie à Chantilly et dans l'Oise.",
       url: data.url,
       telephone: data.numero,
       email: data.email,
       address: {
         "@type": "PostalAddress",
-        streetAddress: "10 route d'Eragny",
-        addressLocality: "Chantilly",
-        postalCode: "95480",
-        addressRegion: "Oise",
+        streetAddress: "17 allée des Eguerets",
+        addressLocality: "Jouy-le-Moutier",
+        postalCode: "95280",
+        addressRegion: "Val-d'Oise",
         addressCountry: "FR",
       },
       geo: {
         "@type": "GeoCoordinates",
-        latitude: 49.0283,
-        longitude: 2.0852,
+        latitude: 49.016,
+        longitude: 2.046,
       },
       openingHoursSpecification: [
         {
@@ -99,7 +99,7 @@ const jsonLd = {
         },
       ],
       priceRange: "€€",
-      image: `${data.url}/fongui.jpeg`,
+      image: `${data.url}/fongui.jpg`,
         areaServed: [
         { "@type": "City", name: "Chantilly" },
         { "@type": "AdministrativeArea", name: "Oise" },
@@ -171,10 +171,10 @@ const jsonLd = {
       mainEntity: [
         {
           "@type": "Question",
-          name: "Quel est le tarif d'un élagueur à Pierrelaye ?",
+          name: "Quel est le tarif d'un élagueur à Chantilly ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Pierre Elagage propose des devis gratuits et sans engagement pour tous les travaux d'élagage à Chantilly et dans l'Oise. Contactez-nous au 06 06 77 65 87 pour obtenir votre devis sous 24h.",
+            text: `${data.entreprise} propose des devis gratuits et sans engagement pour tous les travaux d'élagage à Chantilly et dans l'Oise. Contactez-nous au ${data.numero} pour obtenir votre devis sous 48h.`,
           },
         },
         {
@@ -182,7 +182,7 @@ const jsonLd = {
           name: "Intervenez-vous en urgence pour l'abattage d'arbres dangereux ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Oui, Pierre Rudy intervient en urgence pour l'abattage d'arbres dangereux dans tout l'Oise. Spécialisé dans les abattages extrêmes, il peut intervenir rapidement pour sécuriser votre propriété.",
+            text: `Oui, ${data.entreprise} intervient pour l'abattage d'arbres dangereux dans tout l'Oise. Nous pouvons intervenir rapidement pour sécuriser votre propriété.`,
           },
         },
         {
@@ -190,23 +190,23 @@ const jsonLd = {
           name: "Quelles zones géographiques couvrez-vous ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Pierre Elagage intervient à Chantilly et dans tout l'Oise (95), ainsi que dans les départements voisins en Île-de-France, dans l'Oise et dans les Yvelines.",
+            text: `${data.entreprise} intervient à Chantilly, Gouvieux et Chambly, ainsi que dans l'ensemble de l'Oise et du Val-d'Oise.`,
           },
         },
         {
           "@type": "Question",
-          name: "Pierre Elagage propose-t-il des devis gratuits ?",
+          name: `${data.entreprise} propose-t-il des devis gratuits ?`,
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Oui, Pierre Rudy propose des devis gratuits et sans engagement sous 24h pour tous vos travaux d'élagage, d'abattage et de taille de haie à Chantilly et dans l'Oise.",
+            text: `Oui, ${data.entreprise} propose des devis gratuits et sans engagement sous 48h pour tous vos travaux d'élagage, d'abattage et de taille de haie à Chantilly et dans l'Oise.`,
           },
         },
         {
           "@type": "Question",
-          name: "Êtes-vous certifié pour l'élagage en hauteur ?",
+          name: "Êtes-vous assuré pour l'élagage en hauteur ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Oui, Pierre Rudy est un élagueur certifié avec 20 ans d'expérience, spécialisé dans les interventions en hauteur et les abattages extrêmes en milieu difficile. Toutes les interventions sont réalisées dans le respect des normes de sécurité en vigueur.",
+            text: `Oui, ${data.entreprise} dispose d'une assurance responsabilité civile professionnelle et d'une garantie décennale, et intervient dans le respect des normes de sécurité en vigueur, y compris pour les interventions en hauteur.`,
           },
         },
       ],
@@ -224,7 +224,7 @@ export default function RootLayout({
       lang="fr"
       className={`${geistSans.variable} ${geistMono.variable} ${inknutAntiqua.variable} h-full antialiased`}
     >
-      <head><meta name="google-site-verification" content="NvbGpkvEyilbI1jZscCpYfKqX_77F5fn7TYhotS31yU" /></head>
+      <head><meta name="google-site-verification" content="sbY6yk1Vsof5Nn2aCsnR_9lbm5ZsLJ1_tetvLWhCRPM" /></head>
       <body className="min-h-full flex flex-col">
         <script
           type="application/ld+json"
