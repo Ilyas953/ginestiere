@@ -1,9 +1,9 @@
 export const data = {
     entreprise:"Ginestiere élagage",
     fonction:["élagage"],
-    url:"https://ginestiere-elagage.fr",
+    url:"https://elagage-ginestiere.fr",
     name:'Ginestiere Jerry',
-    email:'contact@ginestiere-elagage.fr',
+    email:'contact@elagage-ginestiere.fr',
     numero:'07 67 87 80 54',
     adresse:"17 allée des eguerets Jouy-le-Moutier ",
     zone:["oise", "oise", "Chantilly"],
