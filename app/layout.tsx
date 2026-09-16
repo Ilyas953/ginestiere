@@ -71,9 +71,9 @@ const jsonLd = {
       email: data.email,
       address: {
         "@type": "PostalAddress",
-        streetAddress: "17 allée des Eguerets",
-        addressLocality: "Jouy-le-Moutier",
-        postalCode: "95280",
+        streetAddress: "Chemin le grand sentier",
+        addressLocality: "Viarmes",
+        postalCode: "95270",
         addressRegion: "Val-d'Oise",
         addressCountry: "FR",
       },
@@ -92,77 +92,143 @@ const jsonLd = {
             "Thursday",
             "Friday",
             "Saturday",
-            "Sunday",
+            
           ],
-          opens: "07:00",
-          closes: "19:00",
+          opens: "08:00",
+          closes: "20:00",
         },
       ],
       priceRange: "€€",
       image: `${data.url}/fongui.jpg`,
         areaServed: [
         { "@type": "City", name: "Chantilly" },
-        { "@type": "AdministrativeArea", name: "Oise" },
-        { "@type": "AdministrativeArea", name: "Île-de-France" },
-        { "@type": "AdministrativeArea", name: "Val-d'Oise" }
+        { "@type": "AdministrativeArea", name: "Creil" },
+        { "@type": "AdministrativeArea", name: "Gouvieux" },
+        { "@type": "AdministrativeArea", name: "Domont" },
+        { "@type": "AdministrativeArea", name: "Viarmes" },
         
       ],
       aggregateRating: {
         "@type": "AggregateRating",
         ratingValue: "5",
-        reviewCount: "3",
+        reviewCount: "8",
         bestRating: "5",
-        worstRating: "1",
+        worstRating: "5",
       },
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "Services d'élagage et d'arboriculture",
+        name: "Services d'élagage",
         itemListElement: [
           {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "Élagage d'arbres",
+              name: "Enlevement d'arbres",
               description:
-                "Élagage professionnel de tous types d'arbres à Chantilly et dans l'Oise.",
+                "Enlèvement sécurisé d'arbres abîmés, dangereux ou encombrants, avec évacuation des débris.",
+
             },
           },
           {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "Abattage d'arbres",
+              name: "Enlevement de souches d'arbres",
               description:
-                "Abattage sécurisé d'arbres, y compris abattages extrêmes en milieu difficile.",
+                "Enlèvement de souches d'arbres pour remettre propre un terrain et faciliter l'aménagement de votre espace.",
             },
           },
           {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "Taille de haie",
+              name: "Taille et elagage d'arbre",
                 description:
-                "Taille et entretien de haies pour particuliers et professionnels dans l'Oise.",
+                "La taille et l'élagage assurent la bonne santé de vos arbres et la sécurité de votre environnement. Nous intervenons dans le Val-d'Oise et l'Oise.",
             },
           },
           {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "Pose de clôture",
+              name: "plantation d'arbres",
                 description:
-                "Pose et installation de clôtures à Chantilly et dans l'Oise.",
+                "Nous vous accompagnons dans la plantation d'arbres adaptés à votre terrain et au climat local.",
             },
           },
           {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "Remise en état de jardin",
+              name: "pose de cables et de renfort",
               description:
-                "Remise en état complète de jardins, entretien d'espaces verts.",
+                "Pose de câbles et renforts pour sécuriser et renforcer les structures de jardin, haies et espaces verts.",
             },
           },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "intervention rapides apres tempetes ou chutes d'arbres",
+              description:
+                "En cas de chute d'arbre ou de dégâts liés à la météo, nous intervenons rapidement pour sécuriser votre terrain.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "elagage d'arbres toutes hauteurs",
+              description:
+                "Nous intervenons sur des arbres de toutes tailles, du petit jardin aux grands espaces boisés. L'élagage est réalisé avec soin.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Abattage d'arbres dangereux ou encombrants",
+              description:
+                "Nous prenons en charge l'abattage d'arbres présentant un danger ou gênant vos projets d'aménagement. Une intervention sécurisée et adaptée aux contraintes locales du Val-d'Oise et de l'Oise.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Debroussaillage et nettoyage de terrain",
+              description:
+                "Le débroussaillage permet de limiter les risques d'incendie et nettoyer vos parcelles. Nous nettoyons vos terrains, jardins ou zones boisées.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "tailles de haies, arbustes et fruitiers",
+              description:
+                "Nous assurons la taille régulière de haies, arbustes et arbres fruitiers pour favoriser leur croissance et maintenir vos espaces verts et jardin en ordre et bien entretenu.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "entretien de jardins et espaces verts",
+              description:
+                "Nous proposons l'entretien complet de jardins et espaces verts dans le Val-d'Oise et l'Oise. Taille, tonte, nettoyage.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Soins aux arbres (diagnostic, securisation)",
+              description:
+                "Nous réalisons le diagnostic sanitaire de vos arbres et proposons des solutions adaptées pour les sécuriser. Ce service prévient les risques.",
+            },
+          },
+          
         ],
       },
     },

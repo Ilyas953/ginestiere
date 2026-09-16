@@ -114,7 +114,7 @@ export function Hero2() {
     transition={{ duration: 0.5 }}
 
     className=" min-h-screen lg:text-start col-span-full lg:col-span-7 items-center lg:items-start flex flex-col gap-[48px] py-[124px] lg:py-[96px] lg:px-[32px] z-20 lg:col-start-1">
-                <div className="flex flex-col gap-[16px] lg:max-w-7xl">
+                <div className="flex flex-col gap-[16px] lg:max-w-7xl pt-[128px]">
             <h1 className=" text-white  text-[32px] lg:text-[48px] font-extrabold text-center lg:text-start justify-center">{data.titreh1}</h1>
             <p className="text-[24px] text-[#E6E6E6] font-semibold text-center lg:text-start">{data.soustitrehero}</p>
             </div>
