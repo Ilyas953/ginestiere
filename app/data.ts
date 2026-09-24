@@ -5,7 +5,7 @@ export const data = {
     name:'Ginestiere Jerry',
     email:'contact@elagage-ginestiere.fr',
     numero:'07 67 87 80 54',
-    adresse:"17 allée des eguerets Jouy-le-Moutier ",
+    adresse:"Chem. le Grand Sentier, 95270 Viarmes",
     zone:["oise", "oise", "Chantilly"],
     horaire:'de 8h a 20h',
     titreh1: "Élagage et entretien de jardin à Chantilly",
@@ -35,13 +35,6 @@ export const data = {
     photo2:"/pknous.jpg",
     altphoto2:"fin d'un chantier d'élagage à Chantilly",
     photofondcontact:"/pknous.jpg",
-
-
-
-
-
-
-
 }
 
 

@@ -231,6 +231,44 @@ export function VilleContent({ville, intro, services, pourquoi, image, imageAlt}
 }
 
 
+export function ServiceContent({titre, intro, servicesTitre, services, pourquoi, image, imageAlt}: {
+    titre: string,
+    intro: string,
+    servicesTitre: string,
+    services: string,
+    pourquoi: string,
+    image: string,
+    imageAlt: string,
+}) {
+
+    return (
+        <>
+            <AnimatedSection id="service" className="flex flex-col py-16 px-6 lg:px-24 gap-16 bg-gradient-to-b from-[#f5f5f5] via-white to-accent">
+
+            <div className="flex flex-col gap-6 text-center max-w-4xl mx-auto">
+                <h2 className="text-accent font-bold text-[32px] lg:text-[48px]">{titre}</h2>
+                <p className="text-[16px] text-text">{intro}</p>
+            </div>
+
+            <div className="flex flex-col lg:flex-row gap-8 items-center max-w-5xl mx-auto w-full">
+                <Image src={image} alt={imageAlt} width={320} height={337} quality={75} className="object-cover object-bottom rounded-lg shrink-0" />
+                <div className="flex flex-col gap-4">
+                    <h3 className="text-accent font-bold text-[24px]">{servicesTitre}</h3>
+                    <p className="text-[16px] text-text">{services}</p>
+                </div>
+            </div>
+
+            <div className="flex flex-col gap-4 max-w-5xl mx-auto w-full">
+                <h3 className="text-accent font-bold text-[24px]">Pourquoi nous choisir</h3>
+                <p className="text-[16px] text-text">{pourquoi}</p>
+            </div>
+
+            </AnimatedSection>
+        </>
+    )
+}
+
+
 export function Header() {
 
     const [burger, setBurger] = useState<boolean>(false)
@@ -250,8 +288,6 @@ export function Header() {
             <div className="hidden lg:flex flex-row gap-8 text-[16px] ">
                 <Link href="/#accueil"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out">Accueil <span className=" transition-all duration-300 ease-in-out border-accent border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
                 <Link href="/#service"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out">À propos <span className=" transition-all duration-300 ease-in-out border-accent border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
-                <Link href="/elagueur-gouvieux"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out">Gouvieux <span className=" transition-all duration-300 ease-in-out border-accent border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
-                <Link href="/elagueur-domont"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out">Domont <span className=" transition-all duration-300 ease-in-out border-accent border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
                 <Link href="/#contact"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out">Contact <span className=" transition-all duration-300 ease-in-out border-accent border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
             </div>
 
@@ -285,8 +321,6 @@ export function Header() {
                  <div className=" row-start-1 mt-20 ml-10 col-span-full text-center items-center flex flex-col gap-8 text-[24px] font-semibold ">
                 <Link href="/#accueil"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out" onClick={()=> setBurger(false)}>Accueil <span className=" transition-all duration-300 ease-in-out border-violet-500 border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
                 <Link href="/#service"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out" onClick={()=> setBurger(false)}>À propos <span className=" transition-all duration-300 ease-in-out border-violet-500 border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
-                <Link href="/elagueur-gouvieux"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out" onClick={()=> setBurger(false)}>Élagueur Gouvieux <span className=" transition-all duration-300 ease-in-out border-violet-500 border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
-                <Link href="/elagueur-domont"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out" onClick={()=> setBurger(false)}>Élagueur Domont <span className=" transition-all duration-300 ease-in-out border-violet-500 border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
                 <Link href="/#contact"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out" onClick={()=> setBurger(false)}>Contact <span className=" transition-all duration-300 ease-in-out border-violet-500 border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
 
             </div>
@@ -470,6 +504,13 @@ export function Footer() {
                      <p className="text-white text-[32px]">Navigation</p>
                       <a href="/#accueil">Accueil</a>
                        <a href="/#service">À propos</a><a href="/#contact">Contact</a>
+                        </div>
+                         <div className="bg-second/50 w-full h-px lg:h-65 lg:w-0.5  "></div>
+                        <div className="text-white font-semibold text-2xl flex flex-col gap-6 text-center">
+                            <p className="text-white text-[32px]">Nos services</p>
+                            <Link href="/abattage-arbre">Abattage d&apos;arbre</Link>
+                            <Link href="/taille-de-haie">Taille de haie</Link>
+                            <Link href="/debroussaillage">Débroussaillage</Link>
                         </div>
                          <div className="bg-second/50 w-full h-px lg:h-65 lg:w-0.5  "></div>
                         <div className="text-white font-semibold text-2xl flex flex-col gap-6 text-center">
