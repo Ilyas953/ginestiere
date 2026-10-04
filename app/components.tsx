@@ -269,6 +269,36 @@ export function ServiceContent({titre, intro, servicesTitre, services, pourquoi,
 }
 
 
+export function Faq({titre, questions}: {
+    titre: string,
+    questions: { question: string, reponse: string }[],
+}) {
+
+    return (
+        <>
+            <AnimatedSection id="faq" className="flex flex-col py-16 px-6 lg:px-24 gap-10 bg-white">
+
+            <h2 className="text-accent font-bold text-[32px] lg:text-[48px] text-center max-w-4xl mx-auto">{titre}</h2>
+
+            <div className="flex flex-col gap-6 max-w-3xl mx-auto w-full">
+                {questions.map((q, index) => (
+                    <details key={index} className="group border-b border-text/10 pb-6">
+                        <summary className="cursor-pointer list-none flex justify-between items-center gap-4 text-accent font-bold text-[20px]">
+                            {q.question}
+                            <Icon icon="material-symbols:add" width={24} height={24} className="shrink-0 group-open:hidden" />
+                            <Icon icon="material-symbols:remove" width={24} height={24} className="shrink-0 hidden group-open:block" />
+                        </summary>
+                        <p className="text-[16px] text-text pt-4">{q.reponse}</p>
+                    </details>
+                ))}
+            </div>
+
+            </AnimatedSection>
+        </>
+    )
+}
+
+
 export function Header() {
 
     const [burger, setBurger] = useState<boolean>(false)
@@ -515,6 +545,7 @@ export function Footer() {
                          <div className="bg-second/50 w-full h-px lg:h-65 lg:w-0.5  "></div>
                         <div className="text-white font-semibold text-2xl flex flex-col gap-6 text-center">
                             <p className="text-white text-[32px]">Zones d&apos;intervention</p>
+                            <Link href="/elagueur-viarmes">Élagueur à Viarmes</Link>
                             <Link href="/elagueur-gouvieux">Élagueur à Gouvieux</Link>
                             <Link href="/elagueur-domont">Élagueur à Domont</Link>
                         </div>

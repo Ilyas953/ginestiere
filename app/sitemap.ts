@@ -10,6 +10,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${data.url}/elagueur-viarmes`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${data.url}/elagueur-gouvieux`,
       lastModified: new Date(),
       changeFrequency: "monthly",
