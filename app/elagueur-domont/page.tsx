@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { VilleHero, VilleContent, Temoignage, Contact, Footer } from "../components";
+import { VilleHero, VilleContent, BreadcrumbBar, Temoignage, Contact, Footer } from "../components";
 import { data } from "../data";
 
 const ville = "Domont";
@@ -7,7 +7,7 @@ const codePostal = "95330";
 const canonical = "/elagueur-domont";
 
 export const metadata: Metadata = {
-  title: `Élagueur à Domont (${codePostal}) - Élagage, abattage, taille de haie | ${data.entreprise}`,
+  title: `Élagueur à Domont (${codePostal}) | ${data.entreprise}`,
   description: `${data.entreprise} intervient à Domont dans le Val-d'Oise pour l'élagage, l'abattage sécurisé, la taille de haie et l'entretien de jardin. Devis gratuit sous 48h.`,
   alternates: {
     canonical,
@@ -85,6 +85,7 @@ export default function ElagueurDomont() {
         imageAlt="Élagueur en intervention à Domont dans le Val-d'Oise"
       />
       <main>
+        <BreadcrumbBar items={[{ label: "Accueil", href: "/" }, { label: `Élagueur à ${ville}` }]} />
         <VilleContent
           ville={ville}
           intro={`${data.entreprise} est basé à Jouy-le-Moutier, à proximité immédiate de Domont, et intervient régulièrement dans le Val-d'Oise. Notre proximité nous permet de nous déplacer rapidement pour établir un devis ou intervenir en urgence sur un arbre dangereux, avec le même niveau d'exigence que sur tous nos chantiers.`}

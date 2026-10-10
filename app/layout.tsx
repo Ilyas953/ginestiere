@@ -22,14 +22,14 @@ const inknutAntiqua = Inknut_Antiqua({
 
 export const metadata: Metadata = {
   metadataBase: new URL(data.url),
-  title: `Élagueur Chantilly - Élagage, abattage, taille de haie | ${data.entreprise}`,
+  title: `Élagueur Chantilly - Élagage, Abattage | ${data.entreprise}`,
   description:
     `${data.name}, élagueur à Chantilly dans l'Oise. Spécialiste en élagage, abattage d'arbres et taille de haie. Devis gratuit sous 48h. Intervention rapide dans l'Oise et le Val-d'Oise.`,
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: `Élagueur Chantilly - Élagage, abattage, taille de haie | ${data.entreprise}`,
+    title: `Élagueur Chantilly - Élagage, Abattage | ${data.entreprise}`,
     description:
       "Élagage, abattage, taille de haie et entretien de jardin dans l'Oise. Devis gratuit sous 48h.",
     url: data.url,

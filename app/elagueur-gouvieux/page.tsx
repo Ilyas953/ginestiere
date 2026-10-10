@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { VilleHero, VilleContent, Temoignage, Contact, Footer } from "../components";
+import { VilleHero, VilleContent, BreadcrumbBar, Temoignage, Contact, Footer } from "../components";
 import { data } from "../data";
 
 const ville = "Gouvieux";
@@ -7,7 +7,7 @@ const codePostal = "60270";
 const canonical = "/elagueur-gouvieux";
 
 export const metadata: Metadata = {
-  title: `Élagueur à Gouvieux (${codePostal}) - Élagage, abattage, taille de haie | ${data.entreprise}`,
+  title: `Élagueur à Gouvieux (${codePostal}) | ${data.entreprise}`,
   description: `${data.entreprise} intervient à Gouvieux dans l'Oise pour l'élagage, l'abattage sécurisé, la taille de haie et l'entretien de jardin. Devis gratuit sous 48h.`,
   alternates: {
     canonical,
@@ -85,6 +85,7 @@ export default function ElagueurGouvieux() {
         imageAlt="Chantier d'élagage terminé à Gouvieux dans l'Oise"
       />
       <main>
+        <BreadcrumbBar items={[{ label: "Accueil", href: "/" }, { label: `Élagueur à ${ville}` }]} />
         <VilleContent
           ville={ville}
           intro={`${data.entreprise} est votre élagueur de proximité pour la commune de Gouvieux, dans l'Oise. Que vous résidiez dans le centre du village, près de l'hippodrome ou dans les hameaux environnants, notre équipe intervient rapidement pour l'entretien de vos arbres et de votre jardin, avec le même soin apporté à chaque chantier.`}

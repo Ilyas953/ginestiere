@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Icon } from "@iconify/react";
 import { ReactNode, useState, useEffect } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 import { data } from "./data";
 import { ContactForm } from "./Formdevis";
@@ -35,7 +35,7 @@ export function Bouton({className, children}: boutonprops) {
     return (
         <>
 
-        <div className={` flex flex-row gap-[10px] items-center text-[24px] px-5 py-[16px] bg-accent rounded-[8px] ${className}`}>
+        <div className={` flex flex-row gap-[10px] items-center text-[24px] px-5 py-[16px] bg-accent rounded-xl shadow-md shadow-accent/20 transition-all duration-300 hover:shadow-lg hover:shadow-accent/30 hover:-translate-y-0.5 hover:brightness-110 ${className}`}>
             {children}
             </div>
 
@@ -47,7 +47,7 @@ export function SecondBouton({className, children}: boutonprops) {
     return (
         <>
 
-        <div className={` flex flex-row gap-[10px]  text-[16px] px-5 py-[12px]  border-[1px] border-accent rounded-[8px] justify-center items-center ${className}`}>
+        <div className={` flex flex-row gap-[10px]  text-[16px] px-5 py-[12px]  border-[1px] border-accent rounded-xl justify-center items-center transition-all duration-300 hover:bg-accent/10 hover:-translate-y-0.5 ${className}`}>
             {children}
             </div>
 
@@ -101,7 +101,7 @@ export function Hero2() {
         alt="arbre a abattre et entretenir"
         fill
         priority
-        quality={100}
+        quality={80}
         sizes="100vw"
         className="object-cover"
       />
@@ -125,19 +125,20 @@ export function Hero2() {
                 </Bouton>
                 </Link>
                 <Link href="#contact" className="h-full">
-                <SecondBouton className="h-full"><Icon icon='material-symbols:mail' width={24} height={24} className="text-white"/>
+                <SecondBouton className="h-full text-white border-white/70 hover:bg-white/10"><Icon icon='material-symbols:mail' width={24} height={24} className="text-white"/>
                 <p className=" text-[16px] font-semibold text-white ">Obtenir un devis gratuit</p></SecondBouton>
                 </Link>
             </div>
             <div className="flex px-8 py-6 bg-white/20 text-white font-semibold text-[16px] rounded-xl drop-shadow-white/20 backdrop-blur-2xl drop-shadow-2xl ">
                 <p>{data.deschero}</p>
             </div>
+            <TrustBadges />
             </motion.div>
 
         </header>
-        
+
         </>
-    )  
+    )
 }
 
 type villeHeroProps = {
@@ -182,10 +183,11 @@ export function VilleHero({titre, description, image, imageAlt}: villeHeroProps)
                 </Bouton>
                 </Link>
                 <Link href="/#contact" className="h-full">
-                <SecondBouton className="h-full"><Icon icon='material-symbols:mail' width={24} height={24} className="text-white"/>
+                <SecondBouton className="h-full text-white border-white/70 hover:bg-white/10"><Icon icon='material-symbols:mail' width={24} height={24} className="text-white"/>
                 <p className=" text-[16px] font-semibold text-white ">Obtenir un devis gratuit</p></SecondBouton>
                 </Link>
             </div>
+            <TrustBadges />
             </motion.div>
 
         </header>
@@ -213,7 +215,7 @@ export function VilleContent({ville, intro, services, pourquoi, image, imageAlt}
             </div>
 
             <div className="flex flex-col lg:flex-row gap-8 items-center max-w-5xl mx-auto w-full">
-                <Image src={image} alt={imageAlt} width={320} height={337} quality={75} className="object-cover object-bottom rounded-lg shrink-0" />
+                <Image src={image} alt={imageAlt} width={320} height={337} quality={75} className="object-cover object-bottom rounded-2xl shadow-xl shrink-0" />
                 <div className="flex flex-col gap-4">
                     <h3 className="text-accent font-bold text-[24px]">Nos services à {ville}</h3>
                     <p className="text-[16px] text-text">{services}</p>
@@ -251,7 +253,7 @@ export function ServiceContent({titre, intro, servicesTitre, services, pourquoi,
             </div>
 
             <div className="flex flex-col lg:flex-row gap-8 items-center max-w-5xl mx-auto w-full">
-                <Image src={image} alt={imageAlt} width={320} height={337} quality={75} className="object-cover object-bottom rounded-lg shrink-0" />
+                <Image src={image} alt={imageAlt} width={320} height={337} quality={75} className="object-cover object-bottom rounded-2xl shadow-xl shrink-0" />
                 <div className="flex flex-col gap-4">
                     <h3 className="text-accent font-bold text-[24px]">{servicesTitre}</h3>
                     <p className="text-[16px] text-text">{services}</p>
@@ -299,6 +301,150 @@ export function Faq({titre, questions}: {
 }
 
 
+export function TrustBadges({className}: {className?: string}) {
+
+    const badges = [
+        { icon: "material-symbols:verified-user", label: "Assurance RC Pro" },
+        { icon: "material-symbols:shield-lock", label: "Garantie décennale" },
+        { icon: "material-symbols:request-quote", label: "Devis gratuit 48h" },
+        { icon: "material-symbols:bolt", label: "Intervention rapide" },
+    ];
+
+    return (
+        <div className={`flex flex-wrap gap-3 ${className}`}>
+            {badges.map((b, i) => (
+                <div key={i} className="flex items-center gap-2 bg-white/15 border border-white/25 backdrop-blur-sm rounded-full px-4 py-2 text-white text-[13px] lg:text-[14px] font-semibold">
+                    <Icon icon={b.icon} width={18} height={18} className="shrink-0" />
+                    {b.label}
+                </div>
+            ))}
+        </div>
+    )
+}
+
+
+export function Breadcrumb({items, dark = false}: {
+    items: { label: string, href?: string }[],
+    dark?: boolean,
+}) {
+
+    const muted = dark ? "text-white/70" : "text-text/60";
+    const current = dark ? "text-white font-semibold" : "text-accent font-semibold";
+    const link = dark ? "hover:text-white" : "hover:text-accent";
+
+    return (
+        <nav aria-label="fil d'ariane" className={`flex flex-wrap items-center gap-1.5 text-[13px] ${muted}`}>
+            {items.map((item, i) => (
+                <span key={i} className="flex items-center gap-1.5">
+                    {i > 0 && <Icon icon="material-symbols:chevron-right" width={14} height={14} className="shrink-0" />}
+                    {item.href ? (
+                        <Link href={item.href} className={`${link} transition-colors`}>{item.label}</Link>
+                    ) : (
+                        <span className={current}>{item.label}</span>
+                    )}
+                </span>
+            ))}
+        </nav>
+    )
+}
+
+
+export function BreadcrumbBar({items}: { items: { label: string, href?: string }[] }) {
+    return (
+        <div className="bg-fond2 px-6 lg:px-24 py-4">
+            <Breadcrumb items={items} />
+        </div>
+    )
+}
+
+
+export function PricingTable({titre, rows, note}: {
+    titre?: string,
+    rows: { label: string, prix: string }[],
+    note?: string,
+}) {
+    return (
+        <div className="flex flex-col gap-4 max-w-3xl mx-auto w-full">
+            {titre && <h3 className="text-accent font-bold text-[24px]">{titre}</h3>}
+            <div className="overflow-hidden rounded-2xl border border-accent/15 shadow-sm">
+                <table className="w-full text-left border-collapse">
+                    <tbody>
+                        {rows.map((r, i) => (
+                            <tr key={i} className={`${i % 2 === 0 ? "bg-fond2" : "bg-white"}`}>
+                                <td className="px-5 py-4 text-[15px] lg:text-[16px] text-text font-semibold">{r.label}</td>
+                                <td className="px-5 py-4 text-[15px] lg:text-[16px] text-accent font-extrabold text-right whitespace-nowrap">{r.prix}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+            {note && <p className="text-[14px] text-text/70 italic">{note}</p>}
+        </div>
+    )
+}
+
+
+export function RelatedLinks({titre, liens}: {
+    titre: string,
+    liens: { href: string, label: string, description: string }[],
+}) {
+    return (
+        <AnimatedSection className="flex flex-col py-16 px-6 lg:px-24 gap-10 bg-fond2">
+
+            <h2 className="text-accent font-bold text-[32px] lg:text-[48px] text-center max-w-4xl mx-auto">{titre}</h2>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto w-full">
+                {liens.map((l, i) => (
+                    <Link key={i} href={l.href} className="group flex flex-col gap-2 bg-white rounded-2xl p-6 border border-accent/10 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <p className="text-accent font-bold text-[18px] flex items-center gap-2">
+                            {l.label}
+                            <Icon icon="material-symbols:arrow-right-alt" width={20} height={20} className="transition-transform duration-300 group-hover:translate-x-1" />
+                        </p>
+                        <p className="text-text text-[14px]">{l.description}</p>
+                    </Link>
+                ))}
+            </div>
+
+        </AnimatedSection>
+    )
+}
+
+
+export function ArticleHero({titre, description, breadcrumb}: {
+    titre: string,
+    description: string,
+    breadcrumb: { label: string, href?: string }[],
+}) {
+    return (
+        <header className="relative w-full px-6 lg:px-24 pt-36 lg:pt-44 pb-16 lg:pb-20 bg-gradient-to-br from-accent to-[#1a3324] overflow-hidden">
+            <Header />
+            <div className="absolute inset-0 opacity-[0.08] bg-[url('/service.jpg')] bg-cover bg-center" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+            <div className="relative z-10 flex flex-col gap-6 max-w-4xl">
+                <Breadcrumb items={breadcrumb} dark />
+                <h1 className="text-white text-[32px] lg:text-[48px] font-extrabold leading-tight">{titre}</h1>
+                <p className="text-[#E6E6E6] text-[18px] lg:text-[20px] font-medium max-w-3xl">{description}</p>
+                <div className="flex flex-col sm:flex-row gap-4 pt-2">
+                    <Link href={`tel:${data.numero}`}>
+                        <Bouton>
+                            <Icon icon='material-symbols:call' width={24} height={24} className="text-white"/>
+                            <p className="text-[16px] font-semibold text-white">Appeler maintenant</p>
+                        </Bouton>
+                    </Link>
+                    <Link href="/#contact">
+                        <SecondBouton className="text-white border-white/70 hover:bg-white/10">
+                            <Icon icon='material-symbols:mail' width={24} height={24} className="text-white"/>
+                            <p className="text-[16px] font-semibold text-white">Devis gratuit</p>
+                        </SecondBouton>
+                    </Link>
+                </div>
+                <TrustBadges className="pt-2" />
+            </div>
+        </header>
+    )
+}
+
+
 export function Header() {
 
     const [burger, setBurger] = useState<boolean>(false)
@@ -337,7 +483,7 @@ export function Header() {
                 </Link>
             </div>
 
-        <button onClick={() => setBurger(true)} className="lg:hidden bg-accent rounded-[8px] w-[44px] h-[44px] flex items-center justify-center shrink-0"><Icon icon="qlementine-icons:menu-burger-16" className={`${!burger ? 'opacity-100' : 'opacity-0'} w-[24px] h-[24px] text-white`} /></button>
+        <button onClick={() => setBurger(true)} className="lg:hidden bg-accent rounded-xl w-[44px] h-[44px] flex items-center justify-center shrink-0 shadow-md shadow-accent/30"><Icon icon="qlementine-icons:menu-burger-16" className={`${!burger ? 'opacity-100' : 'opacity-0'} w-[24px] h-[24px] text-white`} /></button>
 
      </div>
 
@@ -346,18 +492,29 @@ export function Header() {
          <p className="font-extrabold text-[14px]">{data.numero}</p>
      </a>
 
-     {burger && <div className=" fixed top-0 left-0  inset h-screen z-30 w-screen flex flex-col justify-center items-center px-8 py-8 bg-black/85 text-white">
+     <AnimatePresence>
+     {burger && <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.25 }}
+                className=" fixed top-0 left-0  inset h-screen z-30 w-screen flex flex-col justify-center items-center px-8 py-8 bg-black/90 backdrop-blur-sm text-white">
                 <div className=" self-end justify-self-start flex flex-row items-end "><button onClick={() => setBurger(false)}><Icon icon="akar-icons:cross" className="relative   w-[44px] h-11 text-second " /></button></div>
-                 <div className=" row-start-1 mt-20 ml-10 col-span-full text-center items-center flex flex-col gap-8 text-[24px] font-semibold ">
+                 <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.1 }}
+                    className=" row-start-1 mt-20 ml-10 col-span-full text-center items-center flex flex-col gap-8 text-[24px] font-semibold ">
                 <Link href="/#accueil"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out" onClick={()=> setBurger(false)}>Accueil <span className=" transition-all duration-300 ease-in-out border-violet-500 border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
                 <Link href="/#service"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out" onClick={()=> setBurger(false)}>À propos <span className=" transition-all duration-300 ease-in-out border-violet-500 border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
                 <Link href="/#contact"><div className="flex flex-col gap-1 group transition-all duration-500 ease-in-out" onClick={()=> setBurger(false)}>Contact <span className=" transition-all duration-300 ease-in-out border-violet-500 border-1 w-0 opacity-0 group-hover:w-full group-hover:opacity-100"></span> </div></Link>
 
-            </div>
+            </motion.div>
 
-                </div>
-        
+                </motion.div>
+
         }
+        </AnimatePresence>
         </nav>
      </>
 
@@ -377,7 +534,7 @@ export function About() {
             </div>
 
             <div className="flex flex-col lg:flex-row gap-8 items-center max-w-5xl mx-auto w-full">
-                <Image src={data.photo1} alt={data.altphoto1} width={320} height={337} quality={75} className="object-cover object-bottom rounded-lg shrink-0" />
+                <Image src={data.photo1} alt={data.altphoto1} width={320} height={337} quality={75} className="object-cover object-bottom rounded-2xl shadow-xl shrink-0" />
                 <div className="flex flex-col gap-4">
                     <h3 className="text-accent font-bold text-[24px]">Nos Services</h3>
                     <p className="text-[16px] text-text">{data.textservice}</p>
@@ -389,7 +546,7 @@ export function About() {
                     <h3 className="text-accent font-bold text-[24px]">Pourquoi nous choisir</h3>
                     <p className="text-[16px] text-text">{data.pourquoichoisir}</p>
                 </div>
-                <Image src={data.photo2} alt={data.altphoto2} width={320} height={337} quality={75} className="object-cover object-bottom rounded-lg shrink-0" />
+                <Image src={data.photo2} alt={data.altphoto2} width={320} height={337} quality={75} className="object-cover object-bottom rounded-2xl shadow-xl shrink-0" />
             </div>
 
             </AnimatedSection>
@@ -423,7 +580,7 @@ export function Temoignage() {
             <p className="font-semibold text-2xl text-center text-white">La satisfaction de nos clients est notre plus belle récompense, découvrez leurs avis sur nos prestations</p>
             <div className="flex flex-col gap-[24px] items-center w-full lg:grid lg:grid-cols-12  lg:col-span-full">
                 {data.avis.map((a, index) => { return (
-                <div  key={index} className="w-full p-8 lg:h-full lg:col-span-4 lg:row-span-1  bg-white text-[24px] font-bold border border-text flex flex-col rounded-[12px] justify-start "><div className="flex flex-col gap-8 items-start">
+                <div  key={index} className="w-full p-8 lg:h-full lg:col-span-4 lg:row-span-1  bg-white text-[24px] font-bold border border-accent/10 flex flex-col rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 justify-start "><div className="flex flex-col gap-8 items-start">
                     <div className=" h-fit text-yellow-300 flex flex-row ">
                      <Icon icon="material-symbols:star" width="24" height="24" />
                      <Icon icon="material-symbols:star" width="24" height="24" />
@@ -459,7 +616,7 @@ export function Contact() {
         src="/fongui.jpg"
         alt="arbre en mauvais état a abattre"
         fill
-        priority
+        loading="lazy"
         quality={75}
         sizes="100vw"
         className="object-cover"
@@ -522,60 +679,87 @@ export function Contact() {
 
 
 
+function FooterLink({href, children}: {href: string, children: ReactNode}) {
+    return (
+        <Link href={href} className="text-white/85 hover:text-second transition-colors duration-200 w-fit">
+            {children}
+        </Link>
+    )
+}
+
 export function Footer() {
 
     return (
-        <footer className=" bg-accent w-full xl:min-h-75 text-white flex flex-col   items-center justify-center gap-16 py-16 px-8 lg:px-24 xl:items-start  ">
+        <footer className="bg-accent w-full text-white flex flex-col items-center gap-14 py-16 px-8 lg:px-24">
 
-            <div className="flex flex-col gap-16  xl:flex-row justify-center ">
-           {  /* data.logo && <Image src={data.logo.image} width={265} height={266} alt={data.logo.alt} className="w-fit h-auto drop-shadow-[4px] drop-shadow-accent/10 rounded-xl" /> */ }
-              <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-16 lg:h-full ">
-                 <div className="text-white font-semibold text-2xl flex flex-col gap-6 text-center">
-                     <p className="text-white text-[32px]">Navigation</p>
-                      <a href="/#accueil">Accueil</a>
-                       <a href="/#service">À propos</a><a href="/#contact">Contact</a>
-                        </div>
-                         <div className="bg-second/50 w-full h-px lg:h-65 lg:w-0.5  "></div>
-                        <div className="text-white font-semibold text-2xl flex flex-col gap-6 text-center">
-                            <p className="text-white text-[32px]">Nos services</p>
-                            <Link href="/abattage-arbre">Abattage d&apos;arbre</Link>
-                            <Link href="/taille-de-haie">Taille de haie</Link>
-                            <Link href="/debroussaillage">Débroussaillage</Link>
-                        </div>
-                         <div className="bg-second/50 w-full h-px lg:h-65 lg:w-0.5  "></div>
-                        <div className="text-white font-semibold text-2xl flex flex-col gap-6 text-center">
-                            <p className="text-white text-[32px]">Zones d&apos;intervention</p>
-                            <Link href="/elagueur-viarmes">Élagueur à Viarmes</Link>
-                            <Link href="/elagueur-gouvieux">Élagueur à Gouvieux</Link>
-                            <Link href="/elagueur-domont">Élagueur à Domont</Link>
-                        </div>
-                         <div className="bg-second/50 w-full h-px lg:h-65 lg:w-0.5  "></div>
-                        <div className="text-white font-semibold text-2xl flex flex-col gap-6 text-center">
-                            <p className="text-white text-[32px]">Contact</p>
-                            <a href={`tel:${data.numero}`}>
-                            <div className="flex gap-2.5 items-center justify-center">
-                                 <Icon icon="material-symbols:call" width="28" height="28" />
-                         <span>{data.numero}</span>
-                          </div>
-                            </a>
-            <a href={`mailto:${data.email}`}>
-                           <div className="flex gap-2.5 items-center justify-center">
-                            <Icon icon="material-symbols:mail" width="28" height="28" />
-              <span>{data.email}</span>
-              </div>
-              </a>
-              </div>
-              </div>
-              </div>
-            <div className="self-center text-center flex flex-col lg:flex-row gap-6">
-                <a>{`Copyright © ${data.entreprise}. Tous droits réservés.`}</a>
-                <Link href="/mentions-legales">Mentions légales</Link>
-                <Link href="/conditions-generales-services">Conditions générales de services</Link>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10 w-full max-w-6xl text-center sm:text-left">
+
+                <div className="flex flex-col gap-4">
+                    <p className="text-white text-[22px] font-bold">Navigation</p>
+                    <div className="flex flex-col gap-2.5 text-[16px]">
+                        <FooterLink href="/#accueil">Accueil</FooterLink>
+                        <FooterLink href="/#service">À propos</FooterLink>
+                        <FooterLink href="/#contact">Contact</FooterLink>
+                    </div>
+                </div>
+
+                <div className="flex flex-col gap-4">
+                    <p className="text-white text-[22px] font-bold">Nos services</p>
+                    <div className="flex flex-col gap-2.5 text-[16px]">
+                        <FooterLink href="/abattage-arbre">Abattage d&apos;arbre</FooterLink>
+                        <FooterLink href="/taille-de-haie">Taille de haie</FooterLink>
+                        <FooterLink href="/dessouchage">Dessouchage</FooterLink>
+                        <FooterLink href="/debroussaillage">Débroussaillage</FooterLink>
+                    </div>
+                </div>
+
+                <div className="flex flex-col gap-4">
+                    <p className="text-white text-[22px] font-bold">Guides &amp; tarifs</p>
+                    <div className="flex flex-col gap-2.5 text-[16px]">
+                        <FooterLink href="/tarif-taille-de-haie">Tarif taille de haie</FooterLink>
+                        <FooterLink href="/prix-abattage-arbre">Prix abattage d&apos;arbre</FooterLink>
+                        <FooterLink href="/prix-elagage-arbre">Prix élagage d&apos;arbre</FooterLink>
+                        <FooterLink href="/arbre-dangereux">Arbre dangereux : que faire ?</FooterLink>
+                    </div>
+                </div>
+
+                <div className="flex flex-col gap-4">
+                    <p className="text-white text-[22px] font-bold">Zones d&apos;intervention</p>
+                    <div className="flex flex-col gap-2.5 text-[16px]">
+                        <FooterLink href="/elagueur-viarmes">Élagueur à Viarmes</FooterLink>
+                        <FooterLink href="/elagueur-gouvieux">Élagueur à Gouvieux</FooterLink>
+                        <FooterLink href="/elagueur-domont">Élagueur à Domont</FooterLink>
+                    </div>
+                </div>
+
+                <div className="flex flex-col gap-4 col-span-2 sm:col-span-1">
+                    <p className="text-white text-[22px] font-bold">Contact</p>
+                    <div className="flex flex-col gap-2.5 text-[16px]">
+                        <a href={`tel:${data.numero}`} className="flex gap-2 items-center justify-center sm:justify-start text-white/85 hover:text-second transition-colors duration-200">
+                            <Icon icon="material-symbols:call" width="20" height="20" className="shrink-0" />
+                            <span>{data.numero}</span>
+                        </a>
+                        <a href={`mailto:${data.email}`} className="flex gap-2 items-center justify-center sm:justify-start text-white/85 hover:text-second transition-colors duration-200">
+                            <Icon icon="material-symbols:mail" width="20" height="20" className="shrink-0" />
+                            <span className="break-all">{data.email}</span>
+                        </a>
+                    </div>
+                </div>
 
             </div>
 
-            <p className="self-end text-[20px] drop-shadow-2xl drop-shadow-white ">Créé et propulsé par l&apos;agence  <a className="font-extrabold text-violet-600" href="https://webprestige.fr" target="_blank" rel="noopener noreferrer">WebPrestige</a></p>
-              </footer>
+            <div className="w-full max-w-6xl h-px bg-white/15" />
+
+            <div className="flex flex-col items-center gap-4 w-full max-w-6xl">
+                <div className="text-center flex flex-col lg:flex-row gap-2 lg:gap-6 text-[14px] text-white/75">
+                    <span>{`Copyright © ${data.entreprise}. Tous droits réservés.`}</span>
+                    <Link href="/mentions-legales" className="hover:text-white transition-colors">Mentions légales</Link>
+                    <Link href="/conditions-generales-services" className="hover:text-white transition-colors">Conditions générales de services</Link>
+                </div>
+
+                <p className="text-[14px] text-white/60">Créé et propulsé par l&apos;agence <a className="font-bold text-second hover:text-white transition-colors" href="https://webprestige.fr" target="_blank" rel="noopener noreferrer">WebPrestige</a></p>
+            </div>
+        </footer>
     )
 }
 

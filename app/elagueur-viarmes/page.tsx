@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { VilleHero, VilleContent, Faq, Temoignage, Contact, Footer } from "../components";
+import { VilleHero, VilleContent, BreadcrumbBar, Faq, Temoignage, Contact, Footer } from "../components";
 import { data } from "../data";
 
 const ville = "Viarmes";
@@ -30,7 +30,7 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: `Élagueur à Viarmes (${codePostal}) - Élagage, abattage, taille de haie | ${data.entreprise}`,
+  title: `Élagueur à Viarmes (${codePostal}) | ${data.entreprise}`,
   description: `${data.entreprise}, basé à Viarmes dans le Val-d'Oise, intervient pour l'élagage, l'abattage sécurisé, la taille de haie et l'entretien de jardin. Devis gratuit sous 48h.`,
   alternates: {
     canonical,
@@ -119,6 +119,7 @@ export default function ElagueurViarmes() {
         imageAlt="Élagueur en intervention à Viarmes dans le Val-d'Oise"
       />
       <main>
+        <BreadcrumbBar items={[{ label: "Accueil", href: "/" }, { label: `Élagueur à ${ville}` }]} />
         <VilleContent
           ville={ville}
           intro={`${data.entreprise} est installée à Viarmes, au cœur du Val-d'Oise. Étant basés directement dans la commune, nous sommes l'élagueur de proximité pour les habitants de Viarmes et des villages environnants (Seugy, Asnières-sur-Oise, Luzarches, Chaumontel). Cette implantation locale nous permet de nous déplacer rapidement pour un devis ou une intervention en urgence sur un arbre dangereux.`}

@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { VilleHero, ServiceContent, Temoignage, Contact, Footer } from "../components";
+import { VilleHero, ServiceContent, BreadcrumbBar, Temoignage, Contact, Footer } from "../components";
 import { data } from "../data";
 
 const service = "Débroussaillage";
 const canonical = "/debroussaillage";
 
 export const metadata: Metadata = {
-  title: `Débroussaillage dans l'Oise et le Val-d'Oise | ${data.entreprise}`,
+  title: `Débroussaillage - Oise & Val-d'Oise | ${data.entreprise}`,
   description: `${data.entreprise} réalise le débroussaillage de terrains envahis, friches et jardins dans l'Oise et le Val-d'Oise. Remise en état complète, devis gratuit sous 48h.`,
   alternates: {
     canonical,
@@ -78,6 +78,7 @@ export default function Debroussaillage() {
         imageAlt="Débroussaillage d'un terrain envahi par la végétation"
       />
       <main>
+        <BreadcrumbBar items={[{ label: "Accueil", href: "/" }, { label: service }]} />
         <ServiceContent
           titre="Débroussaillage : remettre votre terrain en état"
           intro={`${data.entreprise} est installée à Chambly, dans l'Oise, et intervient dans tout le secteur pour le débroussaillage de terrains envahis par les ronces, broussailles et hautes herbes. Que ce soit pour un terrain à entretenir régulièrement ou une friche à remettre en état avant projet, nous adaptons notre matériel à la difficulté du terrain.`}

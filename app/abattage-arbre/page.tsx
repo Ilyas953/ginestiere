@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { VilleHero, ServiceContent, Temoignage, Contact, Footer } from "../components";
+import { VilleHero, ServiceContent, BreadcrumbBar, RelatedLinks, Temoignage, Contact, Footer } from "../components";
 import { data } from "../data";
 
 const service = "Abattage d'arbre";
 const canonical = "/abattage-arbre";
 
 export const metadata: Metadata = {
-  title: `Abattage d'arbre dans l'Oise et le Val-d'Oise | ${data.entreprise}`,
-  description: `${data.entreprise} réalise l'abattage sécurisé de tous types d'arbres dans l'Oise et le Val-d'Oise : abattage direct, démontage en espace contraint, rognage de souche. Devis gratuit sous 48h.`,
+  title: `Abattage d'arbre - Oise & Val-d'Oise | ${data.entreprise}`,
+  description: `${data.entreprise}, entreprise d'abattage d'arbre dans l'Oise et le Val-d'Oise : abattage direct, démontage en espace contraint, dessouchage. Devis gratuit sous 48h.`,
   alternates: {
     canonical,
   },
@@ -78,14 +78,23 @@ export default function AbattageArbre() {
         imageAlt="Abattage d'arbre sécurisé par un élagueur professionnel"
       />
       <main>
+        <BreadcrumbBar items={[{ label: "Accueil", href: "/" }, { label: service }]} />
         <ServiceContent
-          titre="Abattage d'arbre : notre expertise"
-          intro={`${data.entreprise} est installée à Chambly, dans l'Oise, et intervient dans tout le secteur pour l'abattage d'arbres dangereux, dépérissants ou gênants. Chaque intervention est évaluée au préalable pour choisir la technique la plus sûre selon l'environnement du chantier.`}
+          titre="Entreprise d'abattage d'arbre : notre expertise"
+          intro={`${data.entreprise} est une entreprise d'abattage d'arbre installée à Chambly, dans l'Oise, qui intervient dans tout le secteur pour faire couper un arbre dangereux, dépérissant ou gênant. Chaque intervention est évaluée au préalable pour choisir la technique la plus sûre selon l'environnement du chantier.`}
           servicesTitre="Notre méthode d'abattage"
-          services={`Lorsqu'un arbre est dépérissant, dangereux ou trop proche d'une habitation, nous procédons à l'abattage direct lorsque l'espace le permet, ou au démontage par rétention pièce par pièce en espace contraint (jardin clos, proximité d'un bâtiment, ligne électrique, toiture). Rognage de souche possible en complément pour une remise en état complète du terrain. Chaque chantier est laissé propre, évacuation des déchets verts et du bois comprise.`}
+          services={`Lorsqu'un arbre est dépérissant, dangereux ou trop proche d'une habitation, nous procédons à l'abattage direct lorsque l'espace le permet, ou au démontage par rétention pièce par pièce en espace contraint (jardin clos, proximité d'un bâtiment, ligne électrique, toiture). Dessouchage et rognage de souche possibles en complément pour une remise en état complète du terrain. Chaque chantier est laissé propre, évacuation des déchets verts et du bois comprise.`}
           pourquoi={`Un travail sécurisé, réalisé par un grimpeur-élagueur formé, avec du matériel entretenu et contrôlé. Nous sommes couverts par une assurance responsabilité civile professionnelle et une garantie décennale. Un devis clair et gratuit, sans engagement ni frais cachés, et une intervention rapide en cas d'urgence sur un arbre dangereux.`}
           image="/pknous.jpg"
           imageAlt="Fin de chantier d'abattage d'arbre"
+        />
+        <RelatedLinks
+          titre="Vous vous posez une question avant de faire couper votre arbre ?"
+          liens={[
+            { href: "/prix-abattage-arbre", label: "Prix d'un abattage d'arbre", description: "Nos fourchettes de prix indicatives par hauteur d'arbre, avec ou sans dessouchage." },
+            { href: "/arbre-dangereux", label: "Arbre dangereux : les signes", description: "Comment reconnaître un arbre à risque et que faire en urgence." },
+            { href: "/dessouchage", label: "Dessouchage de souche", description: "Enlever une souche après un abattage : méthodes et tarifs." },
+          ]}
         />
         <Temoignage />
         <Contact />

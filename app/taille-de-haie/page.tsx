@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { VilleHero, ServiceContent, Temoignage, Contact, Footer } from "../components";
+import { VilleHero, ServiceContent, BreadcrumbBar, RelatedLinks, Temoignage, Contact, Footer } from "../components";
 import { data } from "../data";
 
 const service = "Taille de haie";
 const canonical = "/taille-de-haie";
 
 export const metadata: Metadata = {
-  title: `Taille de haie dans l'Oise et le Val-d'Oise | ${data.entreprise}`,
+  title: `Taille de haie - Oise & Val-d'Oise | ${data.entreprise}`,
   description: `${data.entreprise} réalise la taille de haie de formation et d'entretien dans l'Oise et le Val-d'Oise, quelle que soit la hauteur. Travail soigné, devis gratuit sous 48h.`,
   alternates: {
     canonical,
@@ -78,14 +78,23 @@ export default function TailleDeHaie() {
         imageAlt="Taille de haie réalisée par un professionnel"
       />
       <main>
+        <BreadcrumbBar items={[{ label: "Accueil", href: "/" }, { label: service }]} />
         <ServiceContent
-          titre="Taille de haie : notre savoir-faire"
-          intro={`${data.entreprise} est installée à Chambly, dans l'Oise, et intervient dans tout le secteur pour l'entretien et la taille de vos haies. Que votre haie serve de clôture, de brise-vue ou d'élément décoratif, nous adaptons la coupe à sa nature et à l'usage que vous en faites.`}
+          titre="Entreprise de taille de haie : notre savoir-faire"
+          intro={`${data.entreprise} est une entreprise de taille de haie installée à Chambly, dans l'Oise, qui intervient dans tout le secteur pour l'entretien et la taille de vos haies. Que votre haie serve de clôture, de brise-vue ou d'élément décoratif, nous adaptons la coupe à sa nature et à l'usage que vous en faites.`}
           servicesTitre="Nos prestations de taille de haie"
           services={`Taille de formation pour donner sa structure à une jeune haie, ou taille d'entretien pour conserver une forme nette année après année. Nous intervenons sur les haies libres comme sur les haies architecturées (carrées, arrondies, topiaires), quelle que soit la hauteur, y compris en hauteur avec du matériel adapté. Ramassage et évacuation des déchets de taille compris à chaque chantier.`}
           pourquoi={`Une coupe nette et régulière, respectueuse des périodes de nidification et de la physiologie de vos arbustes. Matériel professionnel entretenu, taille précise sur toute la longueur de la haie. Entreprise assurée en responsabilité civile professionnelle, devis clair et gratuit, sans engagement. Contrats d'entretien annuels disponibles pour une haie impeccable toute l'année.`}
           image="/pknous.jpg"
           imageAlt="Haie taillée avec précision après intervention"
+        />
+        <RelatedLinks
+          titre="Combien coûte une taille de haie ?"
+          liens={[
+            { href: "/tarif-taille-de-haie", label: "Tarif taille de haie au mètre linéaire", description: "Nos fourchettes de prix selon la hauteur et l'accessibilité de la haie." },
+            { href: "/abattage-arbre", label: "Abattage d'arbre", description: "Un arbre à faire couper en plus de votre haie ? Découvrez notre service." },
+            { href: "/debroussaillage", label: "Débroussaillage", description: "Terrain envahi autour de votre haie ? On s'occupe aussi du débroussaillage." },
+          ]}
         />
         <Temoignage />
         <Contact />
