@@ -97,7 +97,7 @@ export default function AbattageArbre() {
           ]}
         />
         <Temoignage />
-        <Contact />
+        <Contact titre={`Demandez votre devis gratuit — ${service}`} />
       </main>
       <Footer />
     </>

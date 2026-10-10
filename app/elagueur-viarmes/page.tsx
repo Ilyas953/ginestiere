@@ -133,7 +133,7 @@ export default function ElagueurViarmes() {
           questions={faqs}
         />
         <Temoignage />
-        <Contact />
+        <Contact titre={`Demandez votre devis gratuit — Élagueur à ${ville}`} />
       </main>
       <Footer />
     </>

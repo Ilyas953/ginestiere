@@ -3,9 +3,8 @@ import Link from "next/link";
 import { data } from "../data";
 
 export const metadata: Metadata = {
-  title: "Conditions Générales de Services — Pierre Elagage",
-  description:
-    "Conditions générales de services de Pierre Elagage, élagueur certifié à Chantilly dans l'Oise.",
+  title: `Conditions Générales de Services — ${data.entreprise}`,
+  description: `Conditions générales de services de ${data.entreprise}, élagueur à Chantilly dans l'Oise.`,
   alternates: {
     canonical: "/conditions-generales-services",
   },

@@ -89,7 +89,7 @@ export default function Debroussaillage() {
           imageAlt="Terrain débroussaillé et remis en état"
         />
         <Temoignage />
-        <Contact />
+        <Contact titre={`Demandez votre devis gratuit — ${service}`} />
       </main>
       <Footer />
     </>

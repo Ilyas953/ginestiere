@@ -418,7 +418,6 @@ export function ArticleHero({titre, description, breadcrumb}: {
     return (
         <header className="relative w-full px-6 lg:px-24 pt-36 lg:pt-44 pb-16 lg:pb-20 bg-gradient-to-br from-accent to-[#1a3324] overflow-hidden">
             <Header />
-            <div className="absolute inset-0 opacity-[0.08] bg-[url('/service.jpg')] bg-cover bg-center" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             <div className="relative z-10 flex flex-col gap-6 max-w-4xl">
                 <Breadcrumb items={breadcrumb} dark />
@@ -606,7 +605,7 @@ export function Temoignage() {
 }
 
 
-export function Contact() {
+export function Contact({titre}: {titre?: string} = {}) {
     return (
         <>
         <div id="contact">
@@ -632,7 +631,7 @@ export function Contact() {
     viewport={{ once: true }}
     className="row-start-1 lg:row-start-6 col-span-full w-full justify-center items-center flex flex-col gap-[48px]  z-80">
                 <div className="flex flex-col gap-[16px] text-center">
-                    <h2 className="font-extrabold text-[32px]">Demandez votre devis gratuit — Élagueur à Chantilly </h2>
+                    <h2 className="font-extrabold text-[32px]">{titre ?? "Demandez votre devis gratuit — Élagueur à Chantilly"}</h2>
                     <p className="font-semibold text-[24px]">Contactez-nous dès aujourd'hui pour un devis gratuit et sans engagement. Notre équipe est à votre disposition pour étudier votre projet et vous proposer les meilleures solutions adaptées à vos besoins.</p>
             </div>
             <div className="flex flex-col gap-[24px] lg:flex-row ">

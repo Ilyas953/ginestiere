@@ -26,7 +26,7 @@ const faqs = [
 
 export const metadata: Metadata = {
   title: `Arbre dangereux : signes et solutions | ${data.entreprise}`,
-  description: `Comment reconnaître un arbre penché ou dangereux ? Signes à surveiller, responsabilité légale et intervention rapide avec ${data.entreprise} dans l'Oise et le Val-d'Oise.`,
+  description: `Arbre penché, fissuré ou malade ? Découvrez les signes d'un arbre dangereux, qui est responsable en cas de chute, et comment intervenir vite.`,
   alternates: { canonical },
   openGraph: {
     title: `Arbre dangereux : que faire ? | ${data.entreprise}`,
@@ -147,7 +147,7 @@ export default function ArbreDangereux() {
         />
 
         <Temoignage />
-        <Contact />
+        <Contact titre="Besoin d'une intervention rapide ? Demandez votre devis" />
       </main>
       <Footer />
     </>

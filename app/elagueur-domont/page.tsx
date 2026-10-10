@@ -95,7 +95,7 @@ export default function ElagueurDomont() {
           imageAlt="Fin de chantier d'élagage près de Domont"
         />
         <Temoignage />
-        <Contact />
+        <Contact titre={`Demandez votre devis gratuit — Élagueur à ${ville}`} />
       </main>
       <Footer />
     </>

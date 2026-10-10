@@ -3,9 +3,8 @@ import Link from "next/link";
 import { data } from "../data";
 
 export const metadata: Metadata = {
-  title: "Mentions Légales — Pierre Elagage",
-  description:
-    "Mentions légales du site Pierre Elagage, élagueur certifié à Chantilly dans l'Oise.",
+  title: `Mentions Légales — ${data.entreprise}`,
+  description: `Mentions légales du site ${data.entreprise}, élagueur à Chantilly dans l'Oise.`,
   alternates: {
     canonical: "/mentions-legales",
   },

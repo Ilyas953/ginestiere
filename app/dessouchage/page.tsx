@@ -83,7 +83,7 @@ export default function Dessouchage() {
           ]}
         />
         <Temoignage />
-        <Contact />
+        <Contact titre={`Demandez votre devis gratuit — ${service}`} />
       </main>
       <Footer />
     </>

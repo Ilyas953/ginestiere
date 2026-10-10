@@ -95,7 +95,7 @@ export default function ElagueurGouvieux() {
           imageAlt="Élagueur en action lors d'un chantier près de Gouvieux"
         />
         <Temoignage />
-        <Contact />
+        <Contact titre={`Demandez votre devis gratuit — Élagueur à ${ville}`} />
       </main>
       <Footer />
     </>

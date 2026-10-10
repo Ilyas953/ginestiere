@@ -26,7 +26,7 @@ const faqs = [
 
 export const metadata: Metadata = {
   title: `Tarif taille de haie au m² | ${data.entreprise}`,
-  description: `Quel est le tarif d'une taille de haie au mètre linéaire ? Fourchettes de prix 2026, facteurs qui font varier le coût et devis gratuit avec ${data.entreprise} dans l'Oise et le Val-d'Oise.`,
+  description: `Quel est le tarif d'une taille de haie au mètre linéaire ? Fourchettes de prix, facteurs de variation et devis gratuit dans l'Oise et le Val-d'Oise.`,
   alternates: { canonical },
   openGraph: {
     title: `Tarif taille de haie | ${data.entreprise}`,
@@ -138,7 +138,7 @@ export default function TarifTailleDeHaie() {
         />
 
         <Temoignage />
-        <Contact />
+        <Contact titre="Demandez votre devis gratuit pour votre haie" />
       </main>
       <Footer />
     </>

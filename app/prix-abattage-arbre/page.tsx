@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ArticleHero, PricingTable, Faq, RelatedLinks, Temoignage, Contact, Footer } from "../components";
 import { data } from "../data";
 
@@ -115,7 +116,7 @@ export default function PrixAbattageArbre() {
             <p className="text-[16px] text-text">
               Vous avez un doute sur la dangerosité d&apos;un arbre ?
               {" "}
-              <a href="/arbre-dangereux" className="text-accent font-bold underline">Consultez notre guide pour reconnaître les signes d&apos;un arbre à risque</a>.
+              <Link href="/arbre-dangereux" className="text-accent font-bold underline">Consultez notre guide pour reconnaître les signes d&apos;un arbre à risque</Link>.
             </p>
           </div>
 
@@ -124,7 +125,7 @@ export default function PrixAbattageArbre() {
             <p className="text-[16px] text-text">
               Le dessouchage n&apos;est pas inclus dans le prix de l&apos;abattage : il est facturé séparément, entre 75 € et 400 € selon le diamètre de la souche.
               {" "}
-              <a href="/dessouchage" className="text-accent font-bold underline">Voir le détail des tarifs de dessouchage</a>.
+              <Link href="/dessouchage" className="text-accent font-bold underline">Voir le détail des tarifs de dessouchage</Link>.
             </p>
           </div>
 
@@ -142,7 +143,7 @@ export default function PrixAbattageArbre() {
         />
 
         <Temoignage />
-        <Contact />
+        <Contact titre="Demandez votre devis gratuit pour l'abattage" />
       </main>
       <Footer />
     </>

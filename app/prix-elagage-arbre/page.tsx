@@ -26,7 +26,7 @@ const faqs = [
 
 export const metadata: Metadata = {
   title: `Prix élagage d'arbre - Oise & Val-d'Oise | ${data.entreprise}`,
-  description: `Quel est le tarif d'un élagage d'arbre ? Prix par taille d'arbre, tarif horaire d'un élagueur, et devis gratuit avec ${data.entreprise} dans l'Oise et le Val-d'Oise.`,
+  description: `Quel est le prix d'un élagage d'arbre ? Tarifs par taille d'arbre, taux horaire d'un élagueur, et devis gratuit dans l'Oise et le Val-d'Oise.`,
   alternates: { canonical },
   openGraph: {
     title: `Prix élagage d'arbre | ${data.entreprise}`,
@@ -143,7 +143,7 @@ export default function PrixElagageArbre() {
         />
 
         <Temoignage />
-        <Contact />
+        <Contact titre="Demandez votre devis gratuit pour l'élagage" />
       </main>
       <Footer />
     </>

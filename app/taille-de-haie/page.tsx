@@ -97,7 +97,7 @@ export default function TailleDeHaie() {
           ]}
         />
         <Temoignage />
-        <Contact />
+        <Contact titre={`Demandez votre devis gratuit — ${service}`} />
       </main>
       <Footer />
     </>
